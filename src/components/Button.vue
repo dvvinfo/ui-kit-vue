@@ -7,12 +7,16 @@ const props = defineProps({
   color: {
     type: String,
     default: 'primary'
+  },
+  rounded: {
+    type:Boolean,
+    required: false
   }
 });
 </script>
 
 <template>
-  <button :class="['btn', `btn__${color}`]">{{ label }}</button>
+  <button :class="['btn', `btn__${color}`, {'btn__rounded': rounded}]">{{ label }}</button>
 </template>
 
 <style lang="scss" scoped>
@@ -75,6 +79,9 @@ const props = defineProps({
     &:enabled:hover{
         background-color: var(--action-hover);
     }
+  }
+  &__rounded{
+    border-radius: 20px;
   }
 
 }

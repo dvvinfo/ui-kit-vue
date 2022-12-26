@@ -15,6 +15,17 @@ import Button from '@/components/Button.vue';
     <Button label="отправить письмо" color="action"/>
     <Button label="отправить письмо" color="info-light"/>
   </div>
+  <h2 class="title-2">Pounded</h2>
+  <div class="line">
+    <Button label="отправить письмо" color="primary" :rounded="true"/>
+    <Button label="отправить письмо" color="info" :rounded="true"/>
+    <Button label="отправить письмо" color="disabled" :rounded="true"/>
+    <Button label="отправить письмо" color="secondary" :rounded="true"/>
+    <Button label="отправить письмо" color="warning" :rounded="true"/>
+    <Button label="отправить письмо" color="danger" :rounded="true"/>
+    <Button label="отправить письмо" color="action" :rounded="true"/>
+    <Button label="отправить письмо" color="info-light" :rounded="true"/>
+  </div>
   
 </template>
 <style lang="scss">
