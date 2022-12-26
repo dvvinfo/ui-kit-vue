@@ -26,6 +26,17 @@ import Button from '@/components/Button.vue';
     <Button label="отправить письмо" color="action" :rounded="true"/>
     <Button label="отправить письмо" color="info-light" :rounded="true"/>
   </div>
+  <h2 class="title-2">Disabled</h2>
+  <div class="line">
+    <Button label="отправить письмо" color="primary" :rounded="true" :disabled="true"/>
+    <Button label="отправить письмо" color="info" :rounded="true" :disabled="true"/>
+    <Button label="отправить письмо" color="disabled" :rounded="true" :disabled="true"/>
+    <Button label="отправить письмо" color="secondary" :rounded="true" :disabled="true"/>
+    <Button label="отправить письмо" color="warning" :rounded="true" :disabled="true"/>
+    <Button label="отправить письмо" color="danger" :rounded="true" :disabled="true"/>
+    <Button label="отправить письмо" color="action" :rounded="true" :disabled="true"/>
+    <Button label="отправить письмо" color="info-light" :rounded="true" :disabled="true"/>
+  </div>
   
 </template>
 <style lang="scss">

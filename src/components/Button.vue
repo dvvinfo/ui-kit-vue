@@ -6,17 +6,23 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: 'primary'
+    default: "primary",
   },
   rounded: {
-    type:Boolean,
-    required: false
-  }
+    type: Boolean,
+    required: false,
+  },
+  disabled: {
+    type: Boolean,
+    required: false,
+  },
 });
 </script>
 
 <template>
-  <button :class="['btn', `btn__${color}`, {'btn__rounded': rounded}]">{{ label }}</button>
+  <button :class="['btn', `btn__${color}`, { btn__rounded: rounded }]" :disabled="disabled">
+    {{ label }}
+  </button>
 </template>
 
 <style lang="scss" scoped>
@@ -31,58 +37,61 @@ const props = defineProps({
   cursor: pointer;
   color: var(--white);
   transition: 0.2s;
-  &__info{
+  &__info {
     background-color: var(--info);
-    &:enabled:hover{
-        background-color: var(--info-hover);
+    &:enabled:hover {
+      background-color: var(--info-hover);
     }
   }
-  &__info-light{
+  &__info-light {
     background-color: var(--info-light);
-    &:enabled:hover{
-        background-color: var(--info-light-hover);
+    &:enabled:hover {
+      background-color: var(--info-light-hover);
     }
   }
-  &__primary{
+  &__primary {
     background-color: var(--primary);
-    &:enabled:hover{
-        background-color: var(--primary-hover);
+    &:enabled:hover {
+      background-color: var(--primary-hover);
     }
   }
-  &__disabled{
+  &__disabled {
     background-color: var(--disabled);
     color: var(--gray);
-    &:enabled:hover{
-        background-color: var(--disabled-hover);
+    &:enabled:hover {
+      background-color: var(--disabled-hover);
     }
   }
-  &__secondary{
+  &__secondary {
     background-color: var(--secondary);
-    &:enabled:hover{
-        background-color: var(--secondary-hover);
+    &:enabled:hover {
+      background-color: var(--secondary-hover);
     }
   }
-  &__warning{
+  &__warning {
     background-color: var(--warning);
-    &:enabled:hover{
-        background-color: var(--warning-hover);
+    &:enabled:hover {
+      background-color: var(--warning-hover);
     }
   }
-  &__danger{
+  &__danger {
     background-color: var(--danger);
-    &:enabled:hover{
-        background-color: var(--danger-hover);
+    &:enabled:hover {
+      background-color: var(--danger-hover);
     }
   }
-  &__action{
+  &__action {
     background-color: var(--action);
-    &:enabled:hover{
-        background-color: var(--action-hover);
+    &:enabled:hover {
+      background-color: var(--action-hover);
     }
   }
-  &__rounded{
+  &__rounded {
     border-radius: 20px;
   }
-
+  &:disabled {
+    opacity: .6;
+    cursor: default;
+  }
 }
 </style>
