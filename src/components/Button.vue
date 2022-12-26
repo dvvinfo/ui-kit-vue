@@ -16,12 +16,22 @@ const props = defineProps({
     type: Boolean,
     required: false,
   },
+  iconName: {
+    type: String,
+    required: false,
+  },
 });
 </script>
 
 <template>
-  <button :class="['btn', `btn__${color}`, { btn__rounded: rounded }]" :disabled="disabled">
-    {{ label }}
+  <button
+    :class="['btn', `btn__${color}`, { btn__rounded: rounded }]"
+    :disabled="disabled"
+  >
+    <span class="btn__icon-wrapper" v-if="iconName"
+      ><img class="btn__icon" :src="`/src/assets/img/${iconName}.svg`" alt=""
+    /></span>
+    <span v-else>{{ label }}</span>
   </button>
 </template>
 
@@ -90,8 +100,12 @@ const props = defineProps({
     border-radius: 20px;
   }
   &:disabled {
-    opacity: .6;
+    opacity: 0.6;
     cursor: default;
+  }
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
   }
 }
 </style>
