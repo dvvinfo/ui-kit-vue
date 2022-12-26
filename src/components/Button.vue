@@ -38,6 +38,7 @@ const props = defineProps({
 
 const emit = defineEmits(["testClick"])
 
+
 const clickOnButton = () => {
     emit('testClick')
 }
@@ -64,7 +65,7 @@ let interval = setInterval(() => {
     @click="clickOnButton"
   >
     <span class="btn__icon-wrapper" v-if="iconName"
-      ><img class="btn__icon" :src="`/src/assets/img/${iconName}.svg`" alt=""
+      ><img class="btn__icon" :src="`./assets/img/${iconName}.svg`" alt=""
     /></span>
     <router-link v-else-if="link" class="btn__link" to="/">{{
       label
