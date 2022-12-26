@@ -39,19 +39,25 @@ import Button from '@/components/Button.vue';
   </div>
   <h2 class="title-2">Icons</h2>
   <div class="line">
-    <Button iconName="arrows" label="отправить письмо" color="primary" :rounded="true"/>
-    <Button iconName="vk" label="отправить письмо" color="info" :rounded="true"/>
-    <Button iconName="exit" label="отправить письмо" color="secondary" :rounded="true"/>
-    <Button iconName="google" label="отправить письмо" color="warning" :rounded="true"/>
-    <Button iconName="arrows-next" label="отправить письмо" color="danger" :rounded="true"/>
-    <Button iconName="class" label="отправить письмо" color="action" :rounded="true"/>
-    <Button iconName="pen" label="отправить письмо" color="info-light" :rounded="true"/>
-    <Button iconName="quest" label="отправить письмо" color="info-light" :rounded="true"/>
+    <Button iconName="arrows" label="отправить письмо" color="primary" :rounded="true" size="small"/>
+    <Button iconName="vk" label="отправить письмо" color="info" :rounded="true" size="small"/>
+    <Button iconName="exit" label="отправить письмо" color="secondary" :rounded="true" size="small"/>
+    <Button iconName="google" label="отправить письмо" color="warning" :rounded="true" size="small"/>
+    <Button iconName="arrows-next" label="отправить письмо" color="danger" :rounded="true" size="small"/>
+    <Button iconName="class" label="отправить письмо" color="action" :rounded="true" size="small"/>
+    <Button iconName="pen" label="отправить письмо" color="info-light" :rounded="true" size="small"/>
+    <Button iconName="quest" label="отправить письмо" color="info-light" :rounded="true" size="small"/>
   </div>
 
   <h2 class="title-2">Link</h2>
   <div class="line">
     <Button label="отправить письмо" color="btn-link" :link="true"/>
+  </div>
+
+  <h2 class="title-2">Size</h2>
+  <div class="line">
+    <Button iconName="arrows" color="primary" size="small" :rounded="true"/>
+    <Button label="normal" color="info" :rounded="true"/>
   </div>
   
 </template>

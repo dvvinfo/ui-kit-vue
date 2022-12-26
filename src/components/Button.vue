@@ -24,12 +24,22 @@ const props = defineProps({
     type: Boolean,
     required: false,
   },
+  size: {
+    type: String,
+    required: false,
+    default: "normal",
+  },
 });
 </script>
 
 <template>
   <button
-    :class="['btn', `btn__${color}`, { btn__rounded: rounded }]"
+    :class="[
+      'btn',
+      `btn__${color}`,
+      { btn__rounded: rounded },
+      { btn__small: size === 'small' },
+    ]"
     :disabled="disabled"
   >
     <span class="btn__icon-wrapper" v-if="iconName"
@@ -45,8 +55,15 @@ const props = defineProps({
 <style lang="scss" scoped>
 .btn {
   border: none;
-  background-color: transparent;
+  height: 52px;
   padding: 14px 46px;
+  background-color: transparent;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -55,6 +72,9 @@ const props = defineProps({
   cursor: pointer;
   color: var(--white);
   transition: 0.2s;
+  &:last-child {
+    margin-right: 0;
+  }
   &__info {
     background-color: var(--info);
     &:enabled:hover {
@@ -118,6 +138,7 @@ const props = defineProps({
   &__icon-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   &__link {
     color: var(--secondary);
@@ -128,6 +149,25 @@ const props = defineProps({
 
     &:hover {
       color: var(--gray);
+    }
+  }
+  &__small {
+    padding: 9px;
+    width: 60px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 640px) {
+  
+  .btn {
+    width: auto;
+    &__small {
+      width: 52px;
+      height: 52px;
+    }
+    &__icon {
+      width: 24px;
+      height: 24px;
     }
   }
 }
