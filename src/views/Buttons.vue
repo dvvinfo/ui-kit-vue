@@ -1,5 +1,8 @@
 <script setup>
 import Button from '@/components/Button.vue';
+const eventFormButton = () => {
+    alert("click")
+}
 </script>
 
 <template>
@@ -63,6 +66,11 @@ import Button from '@/components/Button.vue';
   <h2 class="title-2">Timer</h2>
   <div class="line">
     <Button label="Повторное письмо" color="disabled"  :rounded="true" :timer="true"/>
+  </div>
+
+  <h2 class="title-2">Event</h2>
+  <div class="line">
+    <Button label="Повторное письмо" color="danger"  :rounded="true" @testClick="eventFormButton"/>
   </div>
   
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-import { ref} from "vue";
+import { ref } from "vue";
 const props = defineProps({
   label: {
     type: String,
@@ -36,14 +36,20 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits(["testClick"])
+
+const clickOnButton = () => {
+    emit('testClick')
+}
+
 const timerCount = ref(3);
 let interval = setInterval(() => {
   if (timerCount.value === 0) {
-    clearInterval(interval)     
+    clearInterval(interval);
   } else {
-    timerCount.value--
-  }             
-}, 1000)
+    timerCount.value--;
+  }
+}, 1000);
 </script>
 
 <template>
@@ -55,7 +61,7 @@ let interval = setInterval(() => {
       { btn__small: size === 'small' },
     ]"
     :disabled="disabled"
-    @click="startTimer"
+    @click="clickOnButton"
   >
     <span class="btn__icon-wrapper" v-if="iconName"
       ><img class="btn__icon" :src="`/src/assets/img/${iconName}.svg`" alt=""
@@ -66,7 +72,7 @@ let interval = setInterval(() => {
     <div v-else-if="timer" class="timer">
       <span class="btn__label">{{ label }}</span>
       <div class="timer__content">
-        <span class="timer__number">{{timerCount}}</span>
+        <span class="timer__number">{{ timerCount }}</span>
         <span class="timer__number">:</span>
         <span class="timer__number">00</span>
       </div>
