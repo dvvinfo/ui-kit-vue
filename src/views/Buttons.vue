@@ -59,6 +59,11 @@ import Button from '@/components/Button.vue';
     <Button iconName="arrows" color="primary" size="small" :rounded="true"/>
     <Button label="normal" color="info" :rounded="true"/>
   </div>
+
+  <h2 class="title-2">Timer</h2>
+  <div class="line">
+    <Button label="Повторное письмо" color="disabled"  :rounded="true" :timer="true"/>
+  </div>
   
 </template>
 <style lang="scss">

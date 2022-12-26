@@ -1,4 +1,5 @@
 <script setup>
+import { ref} from "vue";
 const props = defineProps({
   label: {
     type: String,
@@ -29,7 +30,20 @@ const props = defineProps({
     required: false,
     default: "normal",
   },
+  timer: {
+    type: Boolean,
+    required: false,
+  },
 });
+
+const timerCount = ref(3);
+let interval = setInterval(() => {
+  if (timerCount.value === 0) {
+    clearInterval(interval)     
+  } else {
+    timerCount.value--
+  }             
+}, 1000)
 </script>
 
 <template>
@@ -41,6 +55,7 @@ const props = defineProps({
       { btn__small: size === 'small' },
     ]"
     :disabled="disabled"
+    @click="startTimer"
   >
     <span class="btn__icon-wrapper" v-if="iconName"
       ><img class="btn__icon" :src="`/src/assets/img/${iconName}.svg`" alt=""
@@ -48,7 +63,16 @@ const props = defineProps({
     <router-link v-else-if="link" class="btn__link" to="/">{{
       label
     }}</router-link>
-    <span v-else>{{ label }}</span>
+    <div v-else-if="timer" class="timer">
+      <span class="btn__label">{{ label }}</span>
+      <div class="timer__content">
+        <span class="timer__number">{{timerCount}}</span>
+        <span class="timer__number">:</span>
+        <span class="timer__number">00</span>
+      </div>
+    </div>
+
+    <span v-else class="btn__label">{{ label }}</span>
   </button>
 </template>
 
@@ -157,8 +181,22 @@ const props = defineProps({
     height: 60px;
   }
 }
+.timer {
+  display: flex;
+  align-items: center;
+  &__content {
+    background-color: var(--danger);
+    padding: 1px 5px;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--white);
+    margin-left: 6px;
+  }
+}
 @media screen and (max-width: 640px) {
-  
   .btn {
     width: auto;
     &__small {
