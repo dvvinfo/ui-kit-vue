@@ -43,7 +43,7 @@ const links = ref([
     margin-bottom: 10px;
     text-decoration: none;
     &:hover {
-      color: var(--blue-colors);
+      color: var(--info);
     }
   }
 }
