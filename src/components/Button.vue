@@ -20,6 +20,10 @@ const props = defineProps({
     type: String,
     required: false,
   },
+  link: {
+    type: Boolean,
+    required: false,
+  },
 });
 </script>
 
@@ -31,6 +35,9 @@ const props = defineProps({
     <span class="btn__icon-wrapper" v-if="iconName"
       ><img class="btn__icon" :src="`/src/assets/img/${iconName}.svg`" alt=""
     /></span>
+    <router-link v-else-if="link" class="btn__link" to="/">{{
+      label
+    }}</router-link>
     <span v-else>{{ label }}</span>
   </button>
 </template>
@@ -38,6 +45,7 @@ const props = defineProps({
 <style lang="scss" scoped>
 .btn {
   border: none;
+  background-color: transparent;
   padding: 14px 46px;
   font-style: normal;
   font-weight: 600;
@@ -96,6 +104,10 @@ const props = defineProps({
       background-color: var(--action-hover);
     }
   }
+  &__btn-link {
+    background-color: transparent;
+    padding: 0;
+  }
   &__rounded {
     border-radius: 20px;
   }
@@ -106,6 +118,17 @@ const props = defineProps({
   &__icon-wrapper {
     display: flex;
     align-items: center;
+  }
+  &__link {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+
+    &:hover {
+      color: var(--gray);
+    }
   }
 }
 </style>

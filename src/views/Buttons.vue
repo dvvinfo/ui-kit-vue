@@ -48,6 +48,11 @@ import Button from '@/components/Button.vue';
     <Button iconName="pen" label="отправить письмо" color="info-light" :rounded="true"/>
     <Button iconName="quest" label="отправить письмо" color="info-light" :rounded="true"/>
   </div>
+
+  <h2 class="title-2">Link</h2>
+  <div class="line">
+    <Button label="отправить письмо" color="btn-link" :link="true"/>
+  </div>
   
 </template>
 <style lang="scss">
