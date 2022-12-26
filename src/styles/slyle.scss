@@ -1,19 +1,27 @@
-@import "./variables";
 :root {
---blue-colors: #0083b6;
---blue-light-colors: #6dd1b0;
---violet-colors: #702c7e;
---light-colors: #efefef;
---vinous-colors: #c4296c;
---yellow-colors: #f4ba46;
---red-colors: #df3f3e;
---orange-colors: #ed732e;
---gray-colors: #767679;
+  --info: #0083b6;
+  --info-hover: #6fa2b6;
+  --info-light: #6dd1b0;
+  --info-light-hover: #8de8ca;
+  --primary: #702c7e;
+  --primary-hover:#b476c1;
+  --disabled: #efefef;
+  --disabled-hover: #e1e1e6;
+  --secondary: #c4296c;
+  --secondary-hover: #c37295;
+  --warning: #f4ba46;
+  --warning-hover: #e4ba65;
+  --danger: #df3f3e;
+  --danger-hover: #cb504f;
+  --action: #ed732e;
+  --action-hover: #e38550;
+  --gray: #767679;
+  --white: #fff;
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 body {

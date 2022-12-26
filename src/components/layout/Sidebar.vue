@@ -2,11 +2,11 @@
 import { ref } from "vue";
 
 const props = defineProps({
-    isOpenSidebar: {
-        type: Boolean,
-        required: true
-    }
-})
+  isOpenSidebar: {
+    type: Boolean,
+    required: true,
+  },
+});
 
 const links = ref([
   { name: "Typography", href: "/typography" },
@@ -14,8 +14,14 @@ const links = ref([
 ]);
 </script>
 <template>
-  <div :class="['sidebar', {sidebar__isOpen: isOpenSidebar}]">
-    <router-link class="sidebar__link" v-for="link in links" :key="link.name" :to="link.href">{{ link.name }}</router-link>
+  <div :class="['sidebar', { sidebar__isOpen: isOpenSidebar }]">
+    <router-link
+      class="sidebar__link"
+      v-for="link in links"
+      :key="link.name"
+      :to="link.href"
+      >{{ link.name }}</router-link
+    >
   </div>
 </template>
 
@@ -31,7 +37,7 @@ const links = ref([
   transition: 0.2s;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
   transform: translateX(-250px);
-  &__isOpen{
+  &__isOpen {
     transform: translateX(0);
   }
   &__link {
@@ -43,7 +49,7 @@ const links = ref([
     margin-bottom: 10px;
     text-decoration: none;
     &:hover {
-      color: var(--blue-colors);
+      color: var(--info);
     }
   }
 }

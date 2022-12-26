@@ -13,7 +13,7 @@ const toggleMenu = () => {
   <div class="container">
     <div class="sidebar-toggle" @click="toggleMenu">
       <img
-        src="./assets/img/Arrows-next.svg"
+        src="/assets/img/arrows-next.svg"
         alt=""
       />
     </div>
@@ -41,7 +41,7 @@ const toggleMenu = () => {
   position: fixed;
   left: 0;
   width: 15px;
-  background: var(--blue-colors);
+  background: var(--info);
   height: 100%;
   top: 62px;
   z-index: 1;
