@@ -28,3 +28,11 @@ body {
   background: #fafafa;
   margin: 0;
 }
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  &__block {
+    display: block;
+  }
+}

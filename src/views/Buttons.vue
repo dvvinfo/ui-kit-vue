@@ -75,9 +75,4 @@ const eventFormButton = () => {
   
 </template>
 <style lang="scss">
-.line{
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
 </style>
