@@ -15,6 +15,7 @@ const links = ref([
   { name: "Switches", href: "/switches" },
   { name: "RadioButtons", href: "/radiobuttons" },
   { name: "Progress", href: "/progress-bar" },
+  { name: "Inputs", href: "/inputs" },
 ]);
 </script>
 <template>
