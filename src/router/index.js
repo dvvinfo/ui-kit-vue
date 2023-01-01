@@ -9,6 +9,7 @@ import Progress from "@/views/Progress.vue";
 import Inputs from "@/views/Inputs.vue";
 import TextAreas from "@/views/TextAreas.vue";
 import Tabs from "@/views/Tabs.vue";
+import Tables from "@/views/Tables.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -67,6 +68,11 @@ const router = createRouter({
       path: "/tabs",
       name: "Tabs",
       component: Tabs,
+    },
+    {
+      path: "/tables",
+      name: "Tables",
+      component: Tables,
     },
   ],
 });
