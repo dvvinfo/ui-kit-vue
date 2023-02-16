@@ -10,6 +10,7 @@ import Inputs from "@/views/Inputs.vue";
 import TextAreas from "@/views/TextAreas.vue";
 import Tabs from "@/views/Tabs.vue";
 import Tables from "@/views/Tables.vue";
+import Modals from "@/views/Modals.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -73,6 +74,11 @@ const router = createRouter({
       path: "/tables",
       name: "Tables",
       component: Tables,
+    },
+    {
+      path: "/modals",
+      name: "Modals",
+      component: Modals,
     },
   ],
 });

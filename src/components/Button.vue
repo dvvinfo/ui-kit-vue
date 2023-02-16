@@ -106,6 +106,9 @@ let interval = setInterval(() => {
   &:last-child {
     margin-right: 0;
   }
+  &__transparent{
+    background-color: transparent;
+  }
   &__info {
     background-color: var(--info);
     &:enabled:hover {

@@ -19,6 +19,7 @@ const links = ref([
   { name: "TextAreas", href: "/textareas" },
   { name: "Tabs", href: "/tabs" },
   { name: "Tables", href: "/tables" },
+  { name: "Modals", href: "/modals" },
 ]);
 </script>
 <template>
