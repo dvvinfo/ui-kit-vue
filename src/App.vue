@@ -1,16 +1,30 @@
 <script setup>
 import HeaderLayout from "./components/layout/Header.vue";
 import SidebarLayout from "./components/layout/Sidebar.vue";
-import { ref } from "vue";
+import Loader from "./components/Loader.vue";
+import { ref,onMounted } from "vue";
 const isOpenMenu = ref(true);
-
+const loader = ref(true)
 const toggleMenu = () => {
   isOpenMenu.value = !isOpenMenu.value;
 };
+
+onMounted (() => {
+  showToggle()
+})
+
+const showToggle =() => {
+setTimeout(() => {
+  loader.value=false
+}, 1000);
+}
 </script>
 
 <template>
-  <div class="container">
+  <div class="loader-wrapper" v-if="loader">
+    <Loader />
+  </div>
+  <div class="container" v-else>
     <div class="sidebar-toggle" @click="toggleMenu">
       <img
         src="/assets/img/arrows-next.svg"
@@ -53,6 +67,12 @@ const toggleMenu = () => {
   &__img-open {
     transform: translate(90deg);
   }
+}
+.loader-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 @media screen and (max-width: 1023px) {
   .content {

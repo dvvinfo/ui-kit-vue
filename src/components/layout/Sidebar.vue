@@ -20,6 +20,7 @@ const links = ref([
   { name: "Tabs", href: "/tabs" },
   { name: "Tables", href: "/tables" },
   { name: "Modals", href: "/modals" },
+  { name: "Paginations", href: "/paginations" },
 ]);
 </script>
 <template>

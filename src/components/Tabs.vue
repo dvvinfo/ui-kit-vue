@@ -8,6 +8,7 @@ const props = defineProps({
     type: String,
     required: false,
   },
+  
 });
 const emit = defineEmits(['changeTab'])
 

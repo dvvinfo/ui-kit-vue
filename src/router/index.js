@@ -11,6 +11,7 @@ import TextAreas from "@/views/TextAreas.vue";
 import Tabs from "@/views/Tabs.vue";
 import Tables from "@/views/Tables.vue";
 import Modals from "@/views/Modals.vue";
+import Paginations from "@/views/Paginations.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -79,6 +80,11 @@ const router = createRouter({
       path: "/modals",
       name: "Modals",
       component: Modals,
+    },
+    {
+      path: "/paginations",
+      name: "paginations",
+      component: Paginations,
     },
   ],
 });
