@@ -12,6 +12,7 @@ import Tabs from "@/views/Tabs.vue";
 import Tables from "@/views/Tables.vue";
 import Modals from "@/views/Modals.vue";
 import Paginations from "@/views/Paginations.vue";
+import Accordion from "@/views/Accordion.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -85,6 +86,11 @@ const router = createRouter({
       path: "/paginations",
       name: "paginations",
       component: Paginations,
+    },
+    {
+      path: "/accordion",
+      name: "accordion",
+      component: Accordion,
     },
   ],
 });
